@@ -1,0 +1,12 @@
+<!--index-->
+{% extends 'base.html' %}
+{% block title %} Welcome My Blog {% endblock %}
+{% block headmessage %}
+	<h3 style="font-family: 標楷體">本站文章列表</h3>
+{% endblock %}
+{% block content %}
+	{% for post in posts %}
+		<p style="font-family:微軟正黑體; font-size: 14pt; font-weight: blod;">
+			<a href="/post/{{ post.slug }}">{{ post.title }}</a>
+	{% endfor %}
+{% endblock %}

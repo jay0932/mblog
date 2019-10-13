@@ -1,0 +1,8 @@
+<!--footer-->
+{% block footer %}
+	{% if now %}
+		<p style="font-family: 微軟正黑體;">Now Time:{{ now }}</p>
+	{% else %}
+		<p style="=font-family: 微軟正黑體;">取自網路</p>
+	{% endif %}
+{% endblock %}

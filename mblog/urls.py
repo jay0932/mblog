@@ -15,9 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainsite.views import homepage
+from mainsite.views import homepage,showpost
+
+#static
+#from django.views import static ##新增
+#from django.conf import settings ##新增
+
+from django.conf.urls.static import static
+from . import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',homepage)
+    path('',homepage),
+    path('post/<slug:slug>/', showpost),
+    
 ]
+
+#static
+urlpatterns += static('/static/', document_root=settings.STATICFILES_DIR)  #加上这一行
+
